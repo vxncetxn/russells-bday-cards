@@ -8,26 +8,85 @@ interface Props {
 const { author, contents, index } = Astro.props;
 ---
 
-<article class="rotate-90 md:rotate-0">
-  <div
-    class={`card-base aspect-[3/2] w-[unset] h-[85vw] md:w-[720px] md:h-[unset] lg:w-[960px] p-16 rounded-lg shadow-lg ${
-      index % 2 === 0 ? "-rotate-3" : "rotate-3"
-    }`}
-  >
-    <div class="bg-white w-full h-full rounded-lg p-16 xs:p-20 sm:p-24 lg:p-32">
-      <div
-        class="font-handwriting text-gray-800 text-xs xxs:text-sm xs:text-base sm:text-lg lg:text-2xl w-[75%] sm:w-[70%]"
-      >
-        From {author},<br /><br />
-        {contents}
+<article
+  class={`card group aspect-[3/2] w-[unset] h-[85vw] md:w-[720px] md:h-[unset] lg:w-[960px] cursor-pointer ${
+    index % 2 === 0
+      ? "rotate-[87deg] md:-rotate-3"
+      : "rotate-[93deg] md:rotate-3"
+  }`}
+>
+  <div class="card-base">
+    <div class="card-front shadow-lg group-hover:shadow-2xl">
+      <div class="card-front-border">
+        <div
+          class="bg-white w-full h-full p-16 xs:p-20 sm:p-24 lg:p-32 rounded-lg"
+        >
+          <div
+            class="font-handwriting text-gray-800 text-xs xxs:text-sm xs:text-base sm:text-lg lg:text-2xl w-[75%] sm:w-[70%]"
+          >
+            From {author},<br /><br />
+            {contents}
+          </div>
+        </div>
+        <div class="stamp"></div>
       </div>
     </div>
-    <div class="stamp"></div>
+    <div class="card-back">
+      <div class="card-back-border">
+        <img class="card-back-img" src="/images/sample-img.jpg" />
+      </div>
+    </div>
   </div>
 </article>
 
 <style>
+  .card {
+    background-color: transparent;
+    perspective: 1000px;
+  }
+
   .card-base {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s cubic-bezier(0.11, 0, 0.5, 0);
+    transform-origin: center;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  /* .card:active .card-base {
+    transform: rotateY(180deg);
+  } */
+
+  .rotate {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+  }
+
+  .card-front {
+    transition: box-shadow 0.2s cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  .card-back {
+    background-color: white;
+    transform: rotateY(180deg);
+  }
+
+  .card-front-border {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    border-radius: 0.5rem;
     background-color: #fff;
     background-repeat: repeat-y;
     background-size: 100% 100%;
@@ -43,6 +102,14 @@ const { author, contents, index } = Astro.props;
       #1c78a4 45px,
       #1c78a4 60px
     );
+  }
+
+  .card-back-border {
+    padding: 16px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    background-color: white;
   }
 
   .stamp {
@@ -110,4 +177,21 @@ const { author, contents, index } = Astro.props;
       radial-gradient(#000a, #0000 50%) 7% 9% / 14% 12%,
       radial-gradient(#0008, #0000 30%) 9% 11% / 9% 8%;
   } */
+
+  .card-back-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
 </style>
+
+<script>
+  const cards = document.querySelectorAll("article");
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () =>
+      card.firstElementChild?.classList.toggle("rotate"),
+    );
+  });
+</script>
