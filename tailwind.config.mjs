@@ -8,6 +8,7 @@ export default {
       fontFamily: {
         sans: ["PP Neue Montreal", ...defaultTheme.fontFamily.sans],
         serif: ["PP Acma", ...defaultTheme.fontFamily.serif],
+        handwriting: ["Caveat"],
       },
     },
     fontMetrics: {

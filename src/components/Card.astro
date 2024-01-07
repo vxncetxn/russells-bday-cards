@@ -1,8 +1,24 @@
-<div
-  class="card-base aspect-[3/2] w-[960px] p-16 rounded-lg shadow-lg -rotate-3"
->
-  <div class="bg-white w-full h-full rounded-lg"></div>
-</div>
+<article>
+  <div
+    class="card-base aspect-[3/2] w-[960px] p-16 rounded-lg shadow-lg -rotate-3"
+  >
+    <div class="bg-white w-full h-full rounded-lg p-32">
+      <div class="font-handwriting text-2xl w-2/3">
+        From Yi Kai,<br /><br /> happy birthday russell! <br /><br />u are the
+        friend who always stumble but not rlly stumble at the same time HAHA! v
+        grateful for having u in my life coz u are that guy who has a seriously
+        whacky side of him that i can have fun in but yet also the other side
+        where u stand up for the right things! (ykwim) <br /><br />glad that
+        this year we get to talk more and KNOW more about each other (plz cont
+        prioritizing relationships HAHA), but also excited for another year of
+        nonsense and many many breakthroughs ahead! we shld hangout more too :")
+        i think the last one we had was in nus? :""<br /><br /> happy birthday xoxo,
+        yikai
+      </div>
+    </div>
+    <div class="stamp"></div>
+  </div>
+</article>
 
 <style>
   .card-base {
@@ -22,4 +38,70 @@
       #1c78a4 60px
     );
   }
+
+  .stamp {
+    aspect-ratio: 4 / 5;
+    width: 16vmin;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    transform: rotate(-4deg);
+    white-space: pre;
+    box-sizing: border-box;
+    padding: 1.5vmin 2vmin;
+    display: flex;
+    align-items: flex-end;
+    background-color: pink;
+  }
+
+  .stamp::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 4 / 5;
+    width: 19vmin;
+    -webkit-mask:
+      radial-gradient(farthest-side at 50% 0%, #0000 60%, #000 0) -2.25vmin 0 / 4.5vmin
+        2.25vmin repeat-x,
+      radial-gradient(farthest-side at 50% 100%, #0000 60%, #000 0) -2.25vmin 100% /
+        4.5vmin 2.25vmin repeat-x,
+      radial-gradient(farthest-side at 0% 50%, #0000 60%, #000 0) 0 -2.25vmin / 2.25vmin
+        4.5vmin repeat-y,
+      radial-gradient(farthest-side at 100% 50%, #0000 60%, #000 0) 100% -2.25vmin /
+        2.25vmin 4.5vmin repeat-y;
+    background: #f3f4f6;
+  }
+
+  /* .stamp::after {
+    content: "Air Mail \a OCT . 05 . 22 \a AUS TX";
+    white-space: pre-wrap;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    font-size: 4.5vmin;
+    font-family: Arial, sans-serif;
+    color: #236c;
+    line-height: 2;
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    top: 60%;
+    left: 60%;
+    background:
+      radial-gradient(farthest-side, #0000 95%, #2369 0),
+      linear-gradient(#2369 0 0) 50% 40% / 75% 2.25% no-repeat,
+      linear-gradient(#2369 0 0) 50% 60% / 75% 2.25% no-repeat;
+    transform: rotate(13deg);
+    -webkit-mask:
+      radial-gradient(#0008, #0000 70%) 3% 3% / 5% 5%,
+      radial-gradient(#000c, #0000 50%) 5% 5% / 7% 7%,
+      radial-gradient(#0008, #0000 40%) 7% 7% / 11% 11%,
+      radial-gradient(#0005, #0000 30%) 11% 11% / 13% 13%,
+      radial-gradient(#000f, #0000 70%) 5% 5% / 13% 11%,
+      radial-gradient(#000a, #0000 50%) 7% 9% / 14% 12%,
+      radial-gradient(#0008, #0000 30%) 9% 11% / 9% 8%;
+  } */
 </style>
