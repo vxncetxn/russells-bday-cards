@@ -1,10 +1,14 @@
 ---
+import { getCollection } from "astro:content";
+
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+
+const messages = await getCollection("messages");
 ---
 
 <Layout title="Happy birthday Russell!">
-  <main class="px-24 py-80">
+  <main class="px-24 pt-80 pb-200">
     <h1
       class="font-serif text-7xl md:text-8xl lg:text-9xl text-[#1F2937] leading-none capsize text-center"
     >
@@ -16,6 +20,18 @@ import Card from "../components/Card.astro";
       From Singapore to Oxford; from SD4 to Russell — happy 24th birthday
       Russell!
     </h2>
-    <div class="mt-200 flex justify-center"><Card /></div>
+    <div
+      class="mt-280 sm:mt-360 md:mt-200 flex flex-col items-center gap-[400px] sm:gap-[640px] md:gap-320"
+    >
+      {
+        messages.map((message, idx) => (
+          <Card
+            author={message.data.author}
+            contents={message.body}
+            index={idx}
+          />
+        ))
+      }
+    </div>
   </main>
 </Layout>

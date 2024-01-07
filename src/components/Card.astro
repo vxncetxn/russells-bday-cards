@@ -1,57 +1,25 @@
+---
+interface Props {
+  author: string;
+  contents: string;
+  index: number;
+}
+
+const { author, contents, index } = Astro.props;
+---
+
 <article class="rotate-90 md:rotate-0">
   <div
-    class="card-base aspect-[3/2] w-[unset] h-[85vw] md:w-[720px] md:h-[unset] lg:w-[960px] p-16 rounded-lg shadow-lg -rotate-3"
+    class={`card-base aspect-[3/2] w-[unset] h-[85vw] md:w-[720px] md:h-[unset] lg:w-[960px] p-16 rounded-lg shadow-lg ${
+      index % 2 === 0 ? "-rotate-3" : "rotate-3"
+    }`}
   >
     <div class="bg-white w-full h-full rounded-lg p-16 xs:p-20 sm:p-24 lg:p-32">
       <div
         class="font-handwriting text-xs xxs:text-sm xs:text-base sm:text-lg lg:text-2xl w-[75%] sm:w-[70%]"
       >
-        <!-- From Yi Kai,<br /> happy birthday russell! <br />u are the friend who
-        always stumble but not rlly stumble at the same time HAHA! v grateful
-        for having u in my life coz u are that guy who has a seriously whacky
-        side of him that i can have fun in but yet also the other side where u
-        stand up for the right things! (ykwim) <br />glad that this year we get
-        to talk more and KNOW more about each other (plz cont prioritizing
-        relationships HAHA), but also excited for another year of nonsense and
-        many many breakthroughs ahead! we shld hangout more too :") i think the
-        last one we had was in nus? :""<br /> happy birthday xoxo, yikai -->
-        Good afternoon, my name is Russell, and I am a Wilderness Explorer in Tribe
-        54, Sweat Lodge 12. Are you in need of any assistance today, sir?<br />
-        Hi Russell! Happy birthday! Though i have not known you for very long and
-        we had maybe a grand total of half a conversation, it’s always fun seeing
-        you interact with others and share your opinions unapologetically. At the
-        start of BF season, i recall you sharing passionately about tithing and how
-        the church was built on the sacrifices of many others before us. That really
-        showed me the depth of your care and love for the church. You inspire me
-        to stay true to myself while rooted in faith. Hope to have more opportunities
-        to get to know you better and hear your opinions on many interesting topics.<br
-        />
-        Have the best birthday~ we will miss you while you’re gone! 生日快乐 see
-        you again very soon ~
-        <!-- Britain colonised the world; like a colon, whatever they took in, they turned
-        to shit.<br />
-        Russell! Happy birthday!<br />
-        Love dissing them Brits with ya! Truly, the common experience of that country
-        has provided fodder for much banter. I’m glad that beyond the banter, we’ve
-        conversed about the things that are significant too. Speaking of significant
-        things, the next phase of life awaits you! There’s so much potential ahead
-        of you and I believe God is going to release you into bigger places accompanied
-        by greater measures of ease and favour. Seeing how you walk with confidence
-        in your niche gifting and calling inspires and encourages me that being different
-        isn’t a bad thing. Keep chasing God, and the greater thing God has prepared
-        for you in the new season to come! -->
-        <!-- Dear Russell, Happy Birthday buddy! I am soo glad over the years I have known
-        you, we have became better friends.. I remember the time when I was insecure
-        to even speak amongst you, but you were the first few to reach out and truly
-        express that you liked having me around the CG! I have learnt soo many things
-        from you, but the biggest thing I took away from our friendship was humility.
-        I am inspired by not only your intellect, but your character as well Russ!<br
-        />
-        Love the questionable conversations we have, that I’m sure if anyone else
-        heard – especially our partners – will result in us getting our heads knocked
-        together. LOL! Have nothing but love for you Russ! Praying for your breakthroughs
-        and all that you have dreamt about this year. Have a blessed year ahead Russ..
-        See you soon -->
+        From {author},<br /><br />
+        {contents}
       </div>
     </div>
     <div class="stamp"></div>
