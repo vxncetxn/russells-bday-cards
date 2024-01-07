@@ -50,6 +50,13 @@ export default {
       320: "20rem",
       360: "22.5rem",
     },
+    screens: {
+      xxs: "420px",
+      xs: "480px",
+      sm: "576px",
+      md: "768px",
+      lg: "1024px",
+    },
   },
   plugins: [require("tailwindcss-capsize")],
 };
