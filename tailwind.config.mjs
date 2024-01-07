@@ -6,10 +6,18 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        sans: ["PP Neue Montreal", ...defaultTheme.fontFamily.sans],
         serif: ["PP Acma", ...defaultTheme.fontFamily.serif],
       },
     },
     fontMetrics: {
+      sans: {
+        capHeight: 715,
+        ascent: 958,
+        descent: -242,
+        lineGap: 0,
+        unitsPerEm: 1000,
+      },
       serif: {
         capHeight: 780,
         ascent: 1032,
