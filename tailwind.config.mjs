@@ -50,6 +50,13 @@ export default {
       320: "20rem",
       360: "22.5rem",
     },
+    backgroundImage: {
+      stamp1: "url('/stamps/stamp-1.png')",
+      stamp2: "url('/stamps/stamp-2.png')",
+      stamp3: "url('/stamps/stamp-3.png')",
+      stamp4: "url('/stamps/stamp-4.png')",
+      stamp5: "url('/stamps/stamp-5.png')",
+    },
     screens: {
       xxs: "420px",
       xs: "480px",

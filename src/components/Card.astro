@@ -28,7 +28,20 @@ const { author, contents, index } = Astro.props;
             {contents}
           </div>
         </div>
-        <div class="stamp"></div>
+        <div
+          class={`stamp ${
+            index % 5 === 0
+              ? "bg-stamp1"
+              : index % 5 === 1
+                ? "bg-stamp2"
+                : index % 5 === 2
+                  ? "bg-stamp3"
+                  : index % 5 === 3
+                    ? "bg-stamp4"
+                    : "bg-stamp5"
+          }`}
+        >
+        </div>
       </div>
     </div>
     <div class="card-back">
@@ -54,10 +67,6 @@ const { author, contents, index } = Astro.props;
     transform-style: preserve-3d;
     will-change: transform;
   }
-
-  /* .card:active .card-base {
-    transform: rotateY(180deg);
-  } */
 
   .rotate {
     transform: rotateY(180deg);
@@ -113,8 +122,8 @@ const { author, contents, index } = Astro.props;
   }
 
   .stamp {
-    aspect-ratio: 4 / 5;
-    width: 16vmin;
+    aspect-ratio: 1 / 1;
+    width: 14.5vmin;
     position: absolute;
     top: 10%;
     right: 10%;
@@ -124,7 +133,7 @@ const { author, contents, index } = Astro.props;
     padding: 1.5vmin 2vmin;
     display: flex;
     align-items: flex-end;
-    background-color: pink;
+    background-size: cover;
   }
 
   .stamp::before {
@@ -133,7 +142,7 @@ const { author, contents, index } = Astro.props;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1;
     width: 19vmin;
     -webkit-mask:
       radial-gradient(farthest-side at 50% 0%, #0000 60%, #000 0) -2.25vmin 0 / 4.5vmin
