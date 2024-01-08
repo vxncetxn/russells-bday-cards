@@ -8,49 +8,83 @@ interface Props {
 const { author, contents, index } = Astro.props;
 ---
 
-<article
-  class={`card group aspect-[3/2] w-[unset] h-[85vw] md:w-[720px] md:h-[unset] lg:w-[960px] cursor-pointer ${
+<div
+  class={`relative ${
     index % 2 === 0
       ? "rotate-[87deg] md:-rotate-3"
       : "rotate-[93deg] md:rotate-3"
   }`}
 >
-  <div class="card-base">
-    <div class="card-front shadow-lg group-hover:shadow-2xl">
-      <div class="card-front-border">
-        <div
-          class="bg-white w-full h-full p-16 xs:p-20 sm:p-24 lg:p-32 rounded-lg"
-        >
+  <article
+    class={`card group aspect-[3/2] w-[unset] h-[85vw] md:w-[720px] md:h-[unset] lg:w-[960px] cursor-pointer`}
+  >
+    <div class="card-base">
+      <div class="card-front shadow-lg group-hover:shadow-2xl">
+        <div class="card-front-border">
           <div
-            class="font-handwriting text-gray-800 text-xs xxs:text-sm xs:text-base sm:text-lg lg:text-2xl w-[75%] sm:w-[70%]"
+            class="bg-white w-full h-full p-16 xs:p-20 sm:p-24 lg:p-32 rounded-lg"
           >
-            From {author},<br /><br />
-            {contents}
+            <div
+              class="font-handwriting text-gray-800 text-xs xxs:text-sm xs:text-base sm:text-lg lg:text-2xl w-[75%] sm:w-[70%]"
+            >
+              From {author},<br /><br />
+              {contents}
+            </div>
+          </div>
+          <div
+            class={`stamp ${
+              index % 5 === 0
+                ? "rotate-12 bg-stamp1"
+                : index % 5 === 1
+                  ? "-rotate-6 bg-stamp2"
+                  : index % 5 === 2
+                    ? "rotate-3 bg-stamp3"
+                    : index % 5 === 3
+                      ? "-rotate-12 bg-stamp4"
+                      : "rotate-6 bg-stamp5"
+            }`}
+          >
           </div>
         </div>
-        <div
-          class={`stamp ${
-            index % 5 === 0
-              ? "rotate-12 bg-stamp1"
-              : index % 5 === 1
-                ? "-rotate-6 bg-stamp2"
-                : index % 5 === 2
-                  ? "rotate-3 bg-stamp3"
-                  : index % 5 === 3
-                    ? "-rotate-12 bg-stamp4"
-                    : "rotate-6 bg-stamp5"
-          }`}
-        >
+      </div>
+      <div class="card-back">
+        <div class="card-back-border">
+          <img class="card-back-img" src="/images/sample-img.jpg" />
         </div>
       </div>
     </div>
-    <div class="card-back">
-      <div class="card-back-border">
-        <img class="card-back-img" src="/images/sample-img.jpg" />
-      </div>
-    </div>
-  </div>
-</article>
+  </article>
+  {
+    index === 0 ? (
+      <>
+        <div class="absolute hidden md:block md:-bottom-[10%] md:-left-[8%]">
+          <svg
+            class="fill-gray-800 md:w-96 lg:w-120"
+            viewBox="0 0 146 132"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="m32.1425 2.29821c-.5213-1.572693-2.2189-2.424981-3.7916-1.903637l-25.62849 8.495787c-1.57269.52134-2.424977 2.21894-1.903634 3.79154.521344 1.5727 2.218894 2.425 3.791594 1.9037l22.78093-7.55182 7.5518 22.78092c.5213 1.5727 2.2189 2.425 3.7916 1.9036 1.5727-.5213 2.425-2.2189 1.9036-3.7916zm113.1215 100.37079c.236-1.64-.902-3.1607-2.542-3.3963l-26.726-3.8395c-1.64-.2356-3.161.9029-3.396 2.5429-.236 1.6401.903 3.1609 2.543 3.3959l23.756 3.413-3.413 23.756c-.236 1.64.903 3.161 2.543 3.396 1.64.236 3.16-.903 3.396-2.543zm-118.6501-100.77289c-20.72748 41.28409-10.2232 80.96769 15.1632 103.35189 25.4216 22.416 65.3279 27.091 102.3159-.604l-3.596-4.8032c-34.807 26.0622-71.5482 21.3662-94.7517.9072-23.2386-20.4907-33.3368-57.186-13.7693-96.15974z" />
+          </svg>
+          <p class="font-handwriting md:text-lg lg:text-xl text-gray-800 absolute -right-[24%] -bottom-[32%]">
+            Click to rotate!
+          </p>
+        </div>
+        <div class="absolute -bottom-[6%] -right-[6%] md:hidden">
+          <svg
+            class="fill-gray-800 w-48 xxs:w-64 xs:w-80 sm:w-96"
+            viewBox="0 0 145 132"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="m113.152 2.29821c.522-1.572693 2.219-2.424981 3.792-1.903637l25.629 8.495787c1.572.52134 2.424 2.21894 1.903 3.79154-.521 1.5727-2.219 2.425-3.791 1.9037l-22.781-7.55182-7.552 22.78092c-.522 1.5727-2.219 2.425-3.792 1.9036-1.572-.5213-2.425-2.2189-1.903-3.7916zm-113.1215111 100.37079c-.2356079-1.64.9028911-3.1607 2.5429111-3.3963l26.7256-3.8395c1.64-.2356 3.1605.9029 3.3961 2.5429.2356 1.6401-.9029 3.1609-2.5429 3.3959l-23.75608 3.413 3.41284 23.756c.23564 1.64-.90289 3.161-2.54291 3.396-1.64001.236-3.16051-.903-3.39612-2.543zm118.6505111-100.77289c20.728 41.28409 10.223 80.96769-15.163 103.35189-25.4218 22.416-65.328 27.091-102.31611-.604l3.59622-4.8032c34.80679 26.0622 71.54799 21.3662 94.75149.9072 23.2384-20.4907 33.3364-57.186 13.7694-96.15974z" />
+          </svg>
+          <p class="font-handwriting text-xs xxs:text-sm xs:text-base sm:text-lg text-gray-800 absolute -right-[120%] xxs:-right-[100%] xs:-right-[90%] sm:-right-[80%] bottom-[0%]">
+            Click to rotate!
+          </p>
+        </div>
+      </>
+    ) : null
+  }
+</div>
 
 <style>
   .card {
