@@ -31,14 +31,14 @@ const { author, contents, index } = Astro.props;
         <div
           class={`stamp ${
             index % 5 === 0
-              ? "bg-stamp1"
+              ? "rotate-12 bg-stamp1"
               : index % 5 === 1
-                ? "bg-stamp2"
+                ? "-rotate-6 bg-stamp2"
                 : index % 5 === 2
-                  ? "bg-stamp3"
+                  ? "rotate-3 bg-stamp3"
                   : index % 5 === 3
-                    ? "bg-stamp4"
-                    : "bg-stamp5"
+                    ? "-rotate-12 bg-stamp4"
+                    : "rotate-6 bg-stamp5"
           }`}
         >
         </div>
@@ -127,7 +127,6 @@ const { author, contents, index } = Astro.props;
     position: absolute;
     top: 10%;
     right: 10%;
-    transform: rotate(-4deg);
     white-space: pre;
     box-sizing: border-box;
     padding: 1.5vmin 2vmin;
