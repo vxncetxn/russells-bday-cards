@@ -57,7 +57,13 @@ if (!images[imagePath])
       <div class="card-back">
         <div class="card-back-border">
           <!-- <img class="card-back-img" src="/images/sample-img.jpg" /> -->
-          <Picture class="card-back-img" src={images[imagePath]()} formats={['avif', 'webp']} densities={[1, 1.5, 2]} alt="sample alt text"/>
+          <Picture
+            class="card-back-img"
+            src={images[imagePath]()}
+            formats={["avif", "webp"]}
+            densities={[1, 1.5, 2]}
+            alt="sample alt text"
+          />
         </div>
       </div>
     </div>
