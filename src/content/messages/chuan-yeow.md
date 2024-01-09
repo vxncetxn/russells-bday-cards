@@ -1,5 +1,6 @@
 ---
 author: Chuan Yeow
+imagePath: /src/assets/img-3.jpg
 ---
 
 Happy birthday, Russell! 🎉🎂

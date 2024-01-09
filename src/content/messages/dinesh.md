@@ -1,5 +1,6 @@
 ---
 author: Dinesh
+imagePath: /src/assets/img-6.jpg
 ---
 
 Britain colonised the world; like a colon, whatever they took in, they turned to shit.

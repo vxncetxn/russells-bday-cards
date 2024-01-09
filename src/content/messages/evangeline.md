@@ -1,5 +1,6 @@
 ---
 author: Evangeline
+imagePath: /src/assets/img-8.jpg
 ---
 
 HPBD Russell!

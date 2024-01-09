@@ -1,5 +1,6 @@
 ---
 author: Yi Kai
+imagePath: /src/assets/img-14.jpg
 ---
 
 happy birthday russell!

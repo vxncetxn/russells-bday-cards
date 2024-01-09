@@ -1,5 +1,6 @@
 ---
 author: Cristal
+imagePath: /src/assets/img-9.jpg
 ---
 
 happy birthday russell!! it’s been 5 whole years since we have known each other and you’re still as unhinged as ever LOL

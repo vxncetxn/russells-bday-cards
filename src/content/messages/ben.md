@@ -1,5 +1,6 @@
 ---
 author: Ben
+imagePath: /src/assets/img-4.jpg
 ---
 
 Happy birthday Russ!!

@@ -30,6 +30,7 @@ const messages = await getCollection("messages");
         messages.map((message, idx) => (
           <Card
             author={message.data.author}
+            imagePath={message.data.imagePath}
             contents={message.body}
             index={idx}
           />

@@ -1,5 +1,6 @@
 ---
 author: Rachael
+imagePath: /src/assets/img-10.jpg
 ---
 
 Good afternoon, my name is Russell, and I am a Wilderness Explorer in Tribe 54, Sweat Lodge 12. Are you in need of any assistance today, sir?
