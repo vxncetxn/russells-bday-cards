@@ -58,8 +58,9 @@ export default {
       stamp5: "url('/stamps/stamp-5.png')",
     },
     screens: {
+      xxxs: "360px",
       xxs: "420px",
-      xs: "480px",
+      xs: "492px",
       sm: "576px",
       md: "768px",
       lg: "1024px",
