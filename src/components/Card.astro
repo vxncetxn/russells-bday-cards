@@ -238,6 +238,26 @@ const { author, contents, index } = Astro.props;
       font-size: 12px;
     }
   }
+
+  @media (min-width: 1440px) {
+    .stamp {
+      width: 110px;
+      padding: 11px 14px;
+    }
+
+    .stamp::before {
+      width: 135px;
+      -webkit-mask:
+        radial-gradient(farthest-side at 50% 0%, #0000 60%, #000 0) -16px 0 / 32px
+          16px repeat-x,
+        radial-gradient(farthest-side at 50% 100%, #0000 60%, #000 0) -16px 100% /
+          32px 16px repeat-x,
+        radial-gradient(farthest-side at 0% 50%, #0000 60%, #000 0) 0 -16px / 16px
+          32px repeat-y,
+        radial-gradient(farthest-side at 100% 50%, #0000 60%, #000 0) 100% -16px /
+          16px 32px repeat-y;
+    }
+  }
 </style>
 
 <script>
